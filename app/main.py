@@ -71,7 +71,7 @@ async def health_check():
     """Endpoint utilisé par Render pour vérifier que le service est opérationnel."""
     return {"status": "ok"}
 
-
+@app.head("/")
 @app.get("/", tags=["🏥 Health Check"])
 async def root():
     """Endpoint racine pour confirmation rapide que l'API tourne."""
