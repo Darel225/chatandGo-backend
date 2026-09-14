@@ -99,6 +99,7 @@ async def request_otp(data: RequestOTPInput):
     try:
         await send_otp_email(data.email, otp)
     except Exception as e:
+        print(f"ERREUR CRITIQUE ENVOI MAIL: {str(e)}") # Ajout pour voir l'erreur sur Render
         raise HTTPException(
             status_code=500,
             detail=f"Erreur lors de l'envoi de l'email : {str(e)}",
