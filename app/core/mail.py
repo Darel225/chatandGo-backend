@@ -77,8 +77,8 @@ async def send_otp_email(to_email: str, otp_code: str) -> None:
     await aiosmtplib.send(
         msg,
         hostname=settings.SMTP_HOST,
-        port=465,
+        port=2525,
         username=settings.SMTP_USER,
         password=settings.SMTP_PASSWORD,
-        use_tls=True,
+        start_tls=True,
     )
